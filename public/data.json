@@ -1,0 +1,43 @@
+{
+    "coord": {
+        "lon": 76.18,
+        "lat": 10.8
+    },
+    "weather": [
+        {
+            "id": 801,
+            "main": "Clouds",
+            "description": "few clouds",
+            "icon": "02d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 34,
+        "feels_like": 37.03,
+        "temp_min": 34,
+        "temp_max": 34,
+        "pressure": 1006,
+        "humidity": 63
+    },
+    "visibility": 6000,
+    "wind": {
+        "speed": 5.7,
+        "deg": 280
+    },
+    "clouds": {
+        "all": 20
+    },
+    "dt": 1589103682,
+    "sys": {
+        "type": 1,
+        "id": 9209,
+        "country": "IN",
+        "sunrise": 1589070852,
+        "sunset": 1589116153
+    },
+    "timezone": 19800,
+    "id": 1256432,
+    "name": "Pattambi",
+    "cod": 200
+}

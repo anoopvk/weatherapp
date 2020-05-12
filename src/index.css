@@ -1,13 +1,136 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+.transi{
+  transition: all ease 1s;
+}
+.logobig{
+  margin: auto;
+  margin-top: 10vh;
+  height:200px;
+   width:200px;
+}
+.logosmall{
+  margin: auto;
+  margin-top: 15px;
+  height:100px;
+   width:100px;
+}
+.inputform {
+  width: 100%;
+}
+.centeraligned {
+  margin-top: 40px !important;
+  transition: all ease 1s;
+}
+.topaligned {
+  margin-top: 25px !important;
+  transition: all ease 1s;
+}
+.background {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100vw;
+
+  background-size: cover;
+  background-position: center;
+  /* background-color: rgb(0, 35, 59); */
+  /* background-color: rgb(109,132,139) */
+  background-color: rgba(101, 195, 250, 0.349);
+
+  
+  color: rgb(77, 77, 77);
+  font-family: "Quicksand", sans-serif;
+}
+.lightbackground{
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+.backgroundlightcard {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  height: 100%;
+}
+.detailtitle {
+  /* display: inline-block; */
+  font-size: 30px;
+}
+.detailsubtitle{
+  font-size: 20px;
+}
+.detailsubtitlesm{
+  /* display: inline-block; */
+  font-size: 15px;
+
+}
+.padzero{
+  padding: 0 !important;
+}
+/* .wrapper {
+  margin: auto;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5);
+} */
+.inputform {
+  line-height: 3;
+}
+.inputfield {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  outline: 0;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  max-width: 500px;
+  width: 85%;
+  padding: 0px 20px;
+  /* border-radius: 5px; */
+  font-weight: bold;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.inputbutton {
+  width: 10%;
+  padding: 0px 10px;
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  position: relative;
+  cursor: pointer;
+  background: #74b0ff;
+  color: #292826;
+  border: 0px solid transparent;
+  /* vertical-align: middle; */
+  text-align: center;
+  text-shadow: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
+.inputfield:focus{
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.inputbutton:hover {
+  background: #74b0ffad;
+
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.inputfield::-webkit-input-placeholder { opacity: 1; -webkit-transition: opacity .5s; transition: opacity .5s; }  /* Chrome <=56, Safari < 10 */
+.inputfield:-moz-placeholder { opacity: 1; -moz-transition: opacity .5s; transition: opacity .5s; } /* FF 4-18 */
+.inputfield::-moz-placeholder { opacity: 1; -moz-transition: opacity .5s; transition: opacity .5s; } /* FF 19-51 */
+.inputfield:-ms-input-placeholder { opacity: 1; -ms-transition: opacity .5s; transition: opacity .5s; } /* IE 10+ */
+.inputfield::placeholder { opacity: 1; transition: opacity .5s; } /* Modern Browsers */
+
+.inputfield:focus::-webkit-input-placeholder { opacity: 0; } /* Chrome <=56, Safari < 10 */
+.inputfield:focus:-moz-placeholder { opacity: 0; } /* FF 4-18 */
+.inputfield:focus::-moz-placeholder { opacity: 0; } /* FF 19-50 */
+.inputfield:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
+.inputfield:focus::placeholder { opacity: 0; } /* Modern Browsers */
+
+
