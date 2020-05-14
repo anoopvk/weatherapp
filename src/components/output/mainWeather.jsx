@@ -23,8 +23,7 @@ class MainWeather extends Component {
     );
   }
   getTemp = (temperature) => {
-    let temp = temperature;
-    temp = Math.round(temp);
+    let temp = Math.round(temperature);
     return temp;
   };
   setweathericonsrc = () => {

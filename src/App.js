@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import InputForm from "./components/inputForm"
 import { getdatafromapi } from './fetchdata/fetchdataweather'
+
+import { getdatafromapiforcast } from './fetchdata/fetchdataforcast'
+
 import { formattime } from "./components/formattime"
 // import Output from "./components/output"
 import MainOutput from "./components/output/mainoutput"
@@ -18,7 +21,8 @@ class App extends Component {
     name: undefined,
     country: undefined,
     feelslike: undefined,
-    code: undefined
+    code: undefined,
+    forcastdata: undefined
 
 
   }
@@ -28,9 +32,7 @@ class App extends Component {
         <div className="container ">
 
           <InputForm code={this.state.code} getdata={this.getdata} />
-          <div className="lightbackground">
-            <MainOutput data={this.state} />
-          </div>
+          <MainOutput data={this.state}  formattime={formattime}/>
         </div>
       </div>
     );
@@ -42,22 +44,22 @@ class App extends Component {
       let keywords = this.state.weather;
       keywords = keywords.split(" ");
       // console.log(this.state.icon[2]);
-      let daynight="";
-      if(this.state.icon[2]==="n"){
-        daynight=",nighttime"
-      }else{
-        daynight=",daytime"
+      let daynight = "";
+      if (this.state.icon[2] === "n") {
+        daynight = ",nighttime"
+      } else {
+        daynight = ",daytime"
       }
-      let url = "https://source.unsplash.com/1600x900/?" + keywords+",sky"+daynight;
+      let url = "https://source.unsplash.com/1600x900/?" + keywords + ",sky" + daynight;
       // console.log(url);
       const sty = {
         backgroundImage: "url(" + url + ")",
-        backgroundPosition:"top"
+        backgroundPosition: "top"
       }
       return sty;
     }
     const sty = {
-      backgroundImage: "url("+defaultBackground+")",
+      backgroundImage: "url(" + defaultBackground + ")",
       // backgroundImage: "url(http://source.unsplash.com/MpdrMpLLZIk)",
 
       // hgGplX3PFBg
@@ -80,16 +82,25 @@ class App extends Component {
     // console.log(userInput);
     // let res = await getdatafromapi(userInput);
     let res = await getdatafromapi(city);
+    let resforcast = await getdatafromapiforcast(city);
 
     console.log(res);
+    console.log(resforcast);
+
+
     if (res.status === 404) {
-      // console.log("specified city was not found");
       this.setState({ code: res.status })
 
-    } else if (res.status === 200) {
+    }
+    else if (resforcast.status === 404) {
+      this.setState({ code: resforcast.status })
+
+    }
+    else if (res.status === 200 && resforcast.status === 200) {
       // console.log("specified city was found " + res.status);
       // console.log(res.data);
       let data = res.data;
+      let forcastdata = resforcast.data;
       let formatedTime = formattime(data.dt, data.timezone)
       this.setState({
         temperature: data.main.temp,
@@ -104,6 +115,8 @@ class App extends Component {
         country: data.sys.country,
         feelslike: data.main.feels_like,
         code: data.cod,
+        forcastdata: forcastdata.list,
+
       });
 
     }
