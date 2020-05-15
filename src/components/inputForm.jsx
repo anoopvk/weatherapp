@@ -44,8 +44,8 @@ class InputForm extends Component {
     );
   }
   componentDidMount(){
-    document.getElementById("inputfield").value="pattambi";
-    document.getElementById('submitbutton').click();
+    // document.getElementById("inputfield").value="pattambi";
+    // document.getElementById('submitbutton').click();
   }
   setlogo = () => {
     if (this.props.code === undefined) {
