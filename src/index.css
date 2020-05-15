@@ -29,7 +29,8 @@
 .background {
   position: absolute;
   min-height: 100vh;
-  min-width: 100vw;
+  /* min-width: 100vw; */
+  min-width: 100%;
 
   background-size: cover;
   background-position: center;
@@ -44,6 +45,7 @@
 .lightbackground{
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
+
 }
 .backgroundlightcard {
   background-color: rgba(0, 0, 0, 0.1);
@@ -133,4 +135,11 @@
 .inputfield:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
 .inputfield:focus::placeholder { opacity: 0; } /* Modern Browsers */
 
+.borderthickbtn{
+  border: 1px solid rgb(0, 0, 0) !important;
+  border-radius: 2px;
+}
+.borderthickbtn:hover{
+  border: 1px solid rgb(255, 255, 255) !important;
 
+}

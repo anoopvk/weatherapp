@@ -13,17 +13,25 @@ class MainOutput extends Component {
       );
     } else if (this.props.data.code === 200) {
       return (
-        <div>
+        <React.Fragment>
           <div className="lightbackground">
             <WeatherOutput data={this.props.data} />
           </div>
-          <div className="lightbackground my-5">
+          <div className="lightbackground my-4 pb-1">
             <div className="row">
-            <div className="col-12 my-5 text-center"><h2><b>Forcast</b></h2></div>
+              <div className="col-12 mt-4 mb-2 text-center">
+                <h2>
+                  <b>Forcast</b>
+                </h2>
+              </div>
             </div>
-            <ForcastOutput data={this.props.data} formattime={this.props.formattime}/>
+            <ForcastOutput
+              data={this.props.data}
+              formattime={this.props.formattime}
+            />
           </div>
-        </div>
+          
+        </React.Fragment>
       );
     } else {
       return <React.Fragment></React.Fragment>;

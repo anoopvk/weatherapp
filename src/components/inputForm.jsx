@@ -12,13 +12,14 @@ class InputForm extends Component {
 
           <form className="inputform" onSubmit={this.props.getdata}>
             <input
+              id="inputfield"
               className="inputfield"
               type="text"
               name="city"
               placeholder="Enter city name..."
               required
             />
-            <button type="submit" className="inputbutton">
+            <button id="submitbutton" type="submit" className="inputbutton">
               <svg
                 height="20"
                 width="20"
@@ -41,6 +42,10 @@ class InputForm extends Component {
         </div>
       </div>
     );
+  }
+  componentDidMount(){
+    document.getElementById("inputfield").value="pattambi";
+    document.getElementById('submitbutton').click();
   }
   setlogo = () => {
     if (this.props.code === undefined) {

@@ -8,11 +8,13 @@ class WeatherOutput extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col-12 m-5">
+          {/* <div className="col-12 m-5"> */}
+          <div className="col-12 p-5">
             <LocationOutput data={this.props.data}/>
           </div>
         </div>
-        <div className="row mx-2">
+        {/* <div className="row mx-2"> */}
+        <div className="row px-2">
           <div className="col-md-6">
             <MainWeather data={this.props.data}/>
           </div>

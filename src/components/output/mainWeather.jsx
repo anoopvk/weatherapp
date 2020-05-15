@@ -4,8 +4,8 @@ class MainWeather extends Component {
   render() {
     return (
         <div className="row mt-4">
-          <div className="col-4">
-            <img src={this.setweathericonsrc()} alt="weather icon" />
+          <div className="col-4 text-right" >
+            <img src={this.setweathericonsrc()}  alt="weather icon" />
           </div>
           <div className="col-8">
             <div className="row">
