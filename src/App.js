@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <div className="background" style={this.setbackground()}>
         <div className="container ">
-
+        
           <InputForm code={this.state.code} getdata={this.getdata} />
           <MainOutput data={this.state}  formattime={formattime}/>
         </div>
